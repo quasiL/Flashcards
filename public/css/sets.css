@@ -1,0 +1,44 @@
+main {
+    width: 40%;
+    margin-inline: auto;
+    margin-block: 3vh;
+    border: #10a1a1 solid 3px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.title span {
+    font-size: 5vh;
+}
+
+.title span:hover {
+    cursor: pointer;
+    color: #10a1a1;
+}
+
+.set-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+    width: 100%;
+    padding-block: 3vh;
+}
+
+.list-item {
+    border: #10a1a1 solid 2px;
+    text-align: center;
+    width: 90%;
+    padding-block: 1vh;
+}
+
+.list-item:hover {
+    background-color: #10a1a1;
+    cursor: pointer;
+    color: black;
+}

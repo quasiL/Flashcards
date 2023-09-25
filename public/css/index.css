@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #10a1a1;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+    padding: 1vh;
+    border: 2px solid #10a1a1;
+    caret-color: #10a1a1;
+    font-size: 1.5vh;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+    outline: 1px solid #10a1a1;
+}
+
+input::placeholder {
+    color: #0d3e48;
+    font-size: 1.5vh;
+}
+
+button {
+    padding: 1vh;
+    border: 2px solid #10a1a1;
+    font-size: 1.5vh;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #10a1a1;
+    color: white;
+}
+
+/*NAVBAR*/
+
+nav {
+    background-color: #10a1a1;
+    font-weight: 500;
+    padding: 3vh;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo-section {
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+nav .links-section {
+    display: flex;
+    gap: 2vh;
+    color: black;
+}
+
+nav .links-section a:hover {
+    color: white;
+}

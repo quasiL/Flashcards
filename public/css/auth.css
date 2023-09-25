@@ -1,0 +1,41 @@
+.container {
+    padding: 0;
+}
+
+/*LOGIN PAGE*/
+
+.auth-window {
+    border: #10a1a1 solid 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+    width: 40%;
+    margin-inline: auto;
+    margin-block: 15vh;
+    padding: 3vh;
+}
+
+.auth-window :is(form) {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width: 100%;
+}
+
+.auth-window :is(h1) {
+    width: 100%;
+    text-align: center;
+}
+
+.auth-window form :is(input, a) {
+    width: 50%;
+    margin-inline: auto;
+}
+
+.auth-window form :is(button) {
+    width: 30%;
+    margin-inline: auto;
+}
+
+
