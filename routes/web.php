@@ -40,6 +40,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('create', [SetsController::class, 'store'])->name('sets.store');
         Route::get('{number}', [SetsController::class, 'show'])->where('number', '^\d{6}$')
             ->name('sets.show');
+        Route::get('/destroy/{number}', [SetsController::class, 'destroy'])->name('sets.destroy');
     });
 });
 

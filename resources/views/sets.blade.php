@@ -12,7 +12,16 @@
           <span class="close-icon"><a href="{{ route('sets.create') }}">+</a></span>
         </div>
         @foreach($sets->all() as $set)
-          <a class="list-item" href="{{ route('sets.show', $set->number) }}">{{ $set->name }}</a>
+          <div class="set">
+            <a class="list-item" href="{{ route('sets.show', $set->number) }}">{{ $set->name }}</a>
+            <div class="dropdown">
+              <span>=</span>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Rename set</a>
+                <a href="{{ route('sets.destroy', $set->number) }}" class="dropdown-item">Delete set</a>
+              </div>
+            </div>
+          </div>
         @endforeach
       </div>
     </main>

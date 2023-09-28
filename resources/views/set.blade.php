@@ -6,7 +6,9 @@
 @section('content')
   <div class="container">
     <main class="flashcards">
-      <h2>{{ $set->name }}</h2>
+      <div class="title">
+        <h2>{{ $set->name }}</h2>
+      </div>
       @livewire('flashcards', ['set' => $set])
     </main>
   </div>

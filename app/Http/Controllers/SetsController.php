@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Set;
 use Exception;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -76,14 +74,10 @@ class SetsController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function destroy(int $number): RedirectResponse
     {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        Set::where('number', $number)->delete();
+        return redirect()->route('sets.index')->with('success', 'Set deleted successfully');
     }
 
     /**
