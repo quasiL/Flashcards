@@ -11,9 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
   @stack('styles')
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+  @livewireStyles
 </head>
 <body>
 @include('include.navbar')
 @yield('content')
+@livewireScripts
 </body>
 </html>

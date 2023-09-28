@@ -18,9 +18,9 @@ class SetsController extends Controller
     /**
      * If user is logged in redirect to user's sets
      *
-     * @return Factory|View|Application
+     * @return View
      */
-    public function index(): Factory|View|Application
+    public function index(): View
     {
         Auth::check() ? $userId = Auth::id() : $userId = null;
         $sets = DB::table('sets')->where('user_id', $userId)->get();
@@ -30,9 +30,9 @@ class SetsController extends Controller
     /**
      * Returns the create set view
      *
-     * @return Factory|View|Application
+     * @return View
      */
-    public function create(): Factory|View|Application
+    public function create(): View
     {
         return view('create-set');
     }
@@ -60,9 +60,9 @@ class SetsController extends Controller
      * If the set does not exist then redirect to 404
      *
      * @param int $number
-     * @return Factory|View|Application
+     * @return View
      */
-    public function show(int $number): Factory|View|Application
+    public function show(int $number): View
     {
         $set = Set::with('flashcards')->where('number', $number)->first();
         if ($set === null) {
@@ -87,12 +87,16 @@ class SetsController extends Controller
     }
 
     /**
-     * Generates a random 6 digit number
+     * Generates a unique 6 digit number
      *
      * @throws Exception
      */
     private function generateNumber(): int
     {
-        return random_int(100000, 999999);
+        $newNumber = random_int(100000, 999999);
+        while (Set::where('number', $newNumber)->exists()) {
+            $newNumber = random_int(100000, 999999);
+        }
+        return $newNumber;
     }
 }

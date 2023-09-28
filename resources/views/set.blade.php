@@ -5,13 +5,9 @@
 @endpush
 @section('content')
   <div class="container">
-    <main>
-      <div>{{ $set->name }}</div>
-      <div>
-        @foreach($set->flashcards->all() as $flashcard)
-          <div>{{ $flashcard->question }}</div>
-        @endforeach
-      </div>
+    <main class="flashcards">
+      <h2>{{ $set->name }}</h2>
+      @livewire('flashcards', ['set' => $set])
     </main>
   </div>
 @endsection
