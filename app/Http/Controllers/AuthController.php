@@ -122,11 +122,14 @@ class AuthController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
         $user = User::where('email', $request->input('email'))->first();
-        if ($user->toArray()['email_verified_at'] === null) {
-            return redirect(route('login'))->withErrors('Please verify your email first');
-        }
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended(route('home'));
+
+        if ($user) {
+            if ($user->toArray()['email_verified_at'] === null) {
+                return redirect(route('login'))->withErrors('Please verify your email first');
+            }
+            if (Auth::attempt($credentials)) {
+                return redirect()->intended(route('home'));
+            }
         }
         return redirect(route('login'))->withErrors('Invalid credentials');
     }
